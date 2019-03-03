@@ -7,7 +7,8 @@ class App extends Component {
     return (
       <div>
         <NavBar/>
-        <Posts/>
+        <Route exact path='/' component={posts}/>
+        <Route exact path='/post/:postId' component={post}/>
       </div>
     );
   }
