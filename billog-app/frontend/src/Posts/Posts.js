@@ -5,19 +5,24 @@ import axios from 'axios';
 class Posts extends Component {
     constructor(props) {
         super(props);
-
+        // Initialize posts property to null upon construction
         this.state = {
             posts: null,
         };
     }
 
+    // async trigger after successful component mount
     async componentDidMount() {
+        // issue GET request to express.js backend
         const posts = (await axios.get('http://localhost:8081/')).data;
         this.setState({
             posts,
         });
     }
 
+    // renders 'loading posts ...' between construction and mounting
+    // upon response from backend, put data into a const posts, which we update the HTML with
+    // uses Link from react-router-dom to redirect users to the following path:'/post/${post.id}'
     render() {
         return (
             <div className="container">

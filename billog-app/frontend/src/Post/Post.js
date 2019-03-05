@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-//Stateful component that uses Axios to issue a GET request to the endpoint that retrieves the whole details of a question
+//Stateful component that uses Axios to issue a GET request to the endpoint that retrieves the whole details of a post
 // and that updates the page whenever it gets a response back.
 
 class Question extends Component {
@@ -12,6 +12,7 @@ class Question extends Component {
         };
     }
 
+    // issues get request upon mount to retreive all details of a post
     async componentWillMount() {
         const { match: { params } } = this.props;
         const post = (await axios.get(`http://localhost:8081/${params.postId}`)).data;
@@ -20,6 +21,7 @@ class Question extends Component {
         });
     }
 
+    // renders post details and all comments attached to post 
     render() {
         const {post} = this.state;
         if (post === null) return <p>Loading ...</p>;
