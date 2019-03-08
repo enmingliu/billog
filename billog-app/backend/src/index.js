@@ -5,6 +5,10 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
+// import dependencies for auth0
+const jwt = require('express-jwt');
+const jwksRsa = require('jwks-rsa');
+
 // define new Express app
 const app = express();
 
