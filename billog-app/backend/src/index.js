@@ -45,28 +45,46 @@ app.get('/:id', (req, res) => {
     res.send(post[0]);
 });
 
+// express middleware that validates ID tokens
+const checkJwt = jwt({
+    secret: jwksRsa.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: `https://enming.auth0.com/.well-known/jwks.json`
+    }),
+
+    // validate the audience and the issuer
+    audience: '9EgWOUQPXNQ0h9Q59kB3c9xRa7Vyysv3',
+    issuer: `https://enming.auth0.com/`,
+    algorithms: ['RS256']
+});
+
 // endpoint that activates on post http requests to take the body of the req and insert it as a new post
-app.post('/', (req, res) => {
+app.post('/', checkJwt, (req, res) => {
     const {title, content} = req.body;
     const newPost = {
         id: posts.length + 1,
         title,
         content,
         comments: [],
+        author: req.user.name,
     };
     posts.push(newPost);
     res.status(200).send();
 });
 
 // endpoint for adding the body of a request as a specific comment to a post 
-app.post('/comment/:id', (req, res) => {
+app.post('/comment/:id', checkJwt, (req, res) => {
     const {comment} = req.body;
+
     const post = posts.filter(p => (p.id === parseInt(req.params.id)));
     if (post.length > 1) return res.status(500).send();
     if (post.length === 0) return res.status(404).send();
 
     post[0].comments.push({
         comment,        
+        author: req.user.name,
     });
     
     res.status(200).send();
