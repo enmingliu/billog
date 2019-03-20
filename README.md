@@ -8,7 +8,7 @@
 
 2. To install the dependencies required for auth0, issue the following command.
 
-    `npm i express-jwt jwks-rsa`
+    `npm i express-jwt jwks-rsa auth0-js`
 
 3. To begin running the Express app issue the following command from the backend directory.
 
