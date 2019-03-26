@@ -1,5 +1,7 @@
 # billog
 
+Blog web app designed to showcase Bill's software/hardware projects. Built in React, Node.js, and Express!
+
 ## Running the website
 
 1. To install the dependencies required for the Node.js app, issue the following command.
