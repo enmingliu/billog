@@ -12,7 +12,7 @@ class SubmitComment extends Component {
 
   updateComment(value) {
     this.setState({
-      Comment: value,
+      comment: value,
     });
   }
 

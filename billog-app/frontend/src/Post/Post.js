@@ -16,11 +16,11 @@ class Post extends Component {
         this.submitComment = this.submitComment.bind(this);
     }
 
-    aysnc componentDidMount() {
+    async componentDidMount() {
         await this.refreshPost();
     }
 
-    aysnc refreshPost() {
+    async refreshPost() {
         const { match: { params } } = this.props;
         const post = (await axios.get(`http://localhost:8081/${params.postId}`)).data;
         this.setState({
@@ -28,23 +28,14 @@ class Post extends Component {
         });
     }
 
-    aysnc submitComment(comment) {
+    async submitComment(comment) {
         await axios.post(`http://localhost:8081/comment/${this.state.post.id}`, {
             comment,
         }, {
-            headers: { 'Authorization': `Bearer ${auth0Client.getIdToken}` }
+            headers: { 'Authorization': `Bearer ${auth0Client.getIdToken()}` }
         });
         await this.refreshPost();
     }
-
-    // issues get request upon mount to retreive all details of a post
-    /*async componentWillMount() {
-        const { match: { params } } = this.props;
-        const post = (await axios.get(`http://localhost:8081/${params.postId}`)).data;
-        this.setState({
-            post,
-        });
-    }*/
 
     // renders post details and all comments attached to post 
     render() {
@@ -57,7 +48,7 @@ class Post extends Component {
                         <h1 className="display-3">{post.title}</h1>
                         <p className="lead">{post.content}</p>
                         <hr className="my-4"/>
-                        <SubmitComment postId={post.id} SubmitComment={this.submitComment} />
+                        <SubmitComment postId={post.id} submitComment={this.submitComment} />
                         <p>Comments:</p>
                         {
                             post.comments.map((comment, idx) => (
