@@ -27,6 +27,15 @@ class Posts extends Component {
         return (
             <div className="container">
                 <div className="row">
+                    <Link to="/new-post">
+                        <div className="card text-white bg-secondary mb-3">
+                            <div className="card-header">Make a new post!</div>
+                            <div className="card-body">
+                                <h4 className="card-title">+ New Post</h4>
+                                <p className="card-text">Share your project with everyone!</p>
+                            </div>
+                        </div>
+                    </Link>
                     {this.state.posts === null && <p>Loading posts...</p>}
                     {
                         this.state.posts && this.state.posts.map(post => (

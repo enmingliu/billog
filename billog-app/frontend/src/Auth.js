@@ -1,3 +1,4 @@
+// TODO: Comment and document Auth class 
 import auth0 from 'auth0-js';
 
 class Auth {
