@@ -13,7 +13,7 @@ function NavBar(props) {
     return (
         <nav className="navbar navbar-dark bg-primary fixed-top">
             <Link className="navbar-brand" to="/">
-                Blog App
+                Bill's Project Corner!
             </Link>
             {
                 !auth0Client.isAuthenticated() && // when user is unauthenticated
