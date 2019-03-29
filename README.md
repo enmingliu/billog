@@ -25,3 +25,9 @@ TODO: Deploy node.js app on Heroku
 5. To begin running the React app issue the following command from the frontend directory.
 
     `npm start`
+
+## Redeploying the website
+
+1. To redeploy the web app, issue the following command inside the frontend directory.
+
+    `npm run deploy`
