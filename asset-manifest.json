@@ -1,0 +1,13 @@
+{
+  "main.css": "/billog/static/css/main.e2c4e212.chunk.css",
+  "main.js": "/billog/static/js/main.ac42a50b.chunk.js",
+  "main.js.map": "/billog/static/js/main.ac42a50b.chunk.js.map",
+  "runtime~main.js": "/billog/static/js/runtime~main.7996d097.js",
+  "runtime~main.js.map": "/billog/static/js/runtime~main.7996d097.js.map",
+  "static/js/2.e77c096c.chunk.js": "/billog/static/js/2.e77c096c.chunk.js",
+  "static/js/2.e77c096c.chunk.js.map": "/billog/static/js/2.e77c096c.chunk.js.map",
+  "index.html": "/billog/index.html",
+  "precache-manifest.eb481596703d07ea62298d18fec7f7ee.js": "/billog/precache-manifest.eb481596703d07ea62298d18fec7f7ee.js",
+  "service-worker.js": "/billog/service-worker.js",
+  "static/css/main.e2c4e212.chunk.css.map": "/billog/static/css/main.e2c4e212.chunk.css.map"
+}
