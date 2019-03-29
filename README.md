@@ -31,3 +31,7 @@ TODO: Deploy node.js app on Heroku
 1. To redeploy the web app, issue the following command inside the frontend directory.
 
     `npm run deploy`
+
+2. To visit the deployed website, go to the following web address.
+
+    `https://eprotagoras.github.io/billog/`
