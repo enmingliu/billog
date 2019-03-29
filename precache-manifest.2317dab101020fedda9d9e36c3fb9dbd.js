@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/billog/static/css/main.e2c4e212.chunk.css"
   },
   {
-    "revision": "22d9043e2cd6247336cfab8b5b3d51a3",
+    "revision": "761642aba8b974378d726b02be8be8ea",
     "url": "/billog/index.html"
   }
 ];
