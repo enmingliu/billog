@@ -2,7 +2,12 @@
 
 Blog web app designed to showcase Bill's software/hardware projects. Built in React, Node.js, and Express!
 
-TODO: Deploy node.js app on Heroku
+TODO:
+=====
+Deploy node.js app on Heroku
+Reconfigure/redesign UI/UX with bootstrap/css
+Add relevant projects/content
+Port old static multi-page website to react app
 
 ## Running the website
 
